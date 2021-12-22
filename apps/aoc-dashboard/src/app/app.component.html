@@ -1,9 +1,25 @@
-<div style="text-align: center">
-  <h1>Welcome to aoc-dashboard!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Fast and Extensible Build System"
-  />
+<h1>
+  <a
+    [href]="'https://adventofcode.com/' + (hello$ | async)?.event"
+    target="_blank"
+    >Advent of Code</a
+  >
+  {{ (hello$ | async)?.event }} - Cisco Leaderboard
+</h1>
+<div *ngFor="let member of members$ | async; let i = index">
+  <p>Ranking: {{ i + 1 }}</p>
+  <p>Name: {{ member.name }}</p>
+  <p>Stars: {{ member.stars }} / 50</p>
+  <div class="star-container">
+    <div
+      *ngFor="let star of member.starList"
+      class="star"
+      [ngClass]="{
+        'star-complete': star === 2,
+        'star-half': star === 1,
+        'star-none': star === 0
+      }"
+    ></div>
+  </div>
+  <hr />
 </div>
-<div>Message: {{ hello$ | async | json }}</div>

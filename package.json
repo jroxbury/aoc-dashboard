@@ -19,10 +19,13 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@nestjs/axios": "^0.0.3",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nrwl/angular": "13.3.12",
+    "axios": "^0.24.0",
+    "cache-manager": "^3.6.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
@@ -47,6 +50,7 @@
     "@nrwl/node": "13.3.12",
     "@nrwl/tao": "13.3.12",
     "@nrwl/workspace": "13.3.12",
+    "@types/cache-manager": "^3.4.2",
     "@types/jest": "27.0.2",
     "@types/node": "14.14.33",
     "@typescript-eslint/eslint-plugin": "~5.3.0",
@@ -60,5 +64,8 @@
     "prettier": "^2.3.1",
     "ts-jest": "27.0.5",
     "typescript": "~4.4.3"
-  }
+  },
+  "description": "This project was generated using [Nx](https://nx.dev).",
+  "main": "decorate-angular-cli.js",
+  "author": ""
 }

@@ -1,0 +1,66 @@
+$star-size: 10px;
+$star: 0.7em solid oldlace;
+$star-half: 0.7em solid silver;
+$star-full: 0.7em solid gold;
+.star-container {
+  display: flex;
+}
+.star {
+  position: relative;
+
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+
+  border-right: 0.3em solid transparent;
+  border-bottom: $star;
+  border-left: 0.3em solid transparent;
+
+  font-size: $star-size;
+
+  &:before,
+  &:after {
+    content: '';
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+
+    border-right: 1em solid transparent;
+    border-bottom: $star;
+    border-left: 1em solid transparent;
+
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    transform: rotate(35deg);
+  }
+
+  &.star-complete {
+    border-bottom: $star-full;
+    &:before,
+    &:after {
+      border-bottom: $star-full;
+    }
+  }
+  &.star-half {
+    border-bottom: $star-half;
+    &:before,
+    &:after {
+      border-bottom: $star-half;
+    }
+  }
+}
+
+a {
+  color: black;
+}
