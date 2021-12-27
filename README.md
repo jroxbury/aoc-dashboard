@@ -1,6 +1,7 @@
-###This app uses the [Advent of Code](https://adventofcode.com/) API to display our private Cisco leaderboard.
+This app uses the [Advent of Code](https://adventofcode.com/) API to display our private Cisco leaderboard.
+---
 
-######This app is built with [Angular](https://angular.io/), [Nest](https://nestjs.com/) and contained in a [Nx Monorepo](https://nx.dev/) and I'm currently deploying on [Digital Ocean](https://www.digitalocean.com/).
+This app is built with [Angular](https://angular.io/), [Nest](https://nestjs.com/) and contained in a [Nx Monorepo](https://nx.dev/) and I'm currently deploying on [Digital Ocean](https://www.digitalocean.com/).
 
 [Github Repo](https://github.com/jroxbury/aoc-dashboard)
 
