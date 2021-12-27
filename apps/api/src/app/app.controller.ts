@@ -1,6 +1,5 @@
 import { AocResponse } from '@aoc-dashboard/api-interfaces';
 import { Controller, Get } from '@nestjs/common';
-import { AxiosResponse } from 'axios';
 import { Observable } from 'rxjs';
 
 import { AppService } from './app.service';
@@ -9,7 +8,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
+  @Get('aoc-json')
   getData(): Observable<AocResponse> {
     return this.appService.getData();
   }

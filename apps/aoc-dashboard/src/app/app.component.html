@@ -1,25 +1,25 @@
-<h1>
-  <a
-    [href]="'https://adventofcode.com/' + (hello$ | async)?.event"
-    target="_blank"
-    >Advent of Code</a
-  >
-  {{ (hello$ | async)?.event }} - Cisco Leaderboard
-</h1>
-<div *ngFor="let member of members$ | async; let i = index">
-  <p>Ranking: {{ i + 1 }}</p>
-  <p>Name: {{ member.name }}</p>
-  <p>Stars: {{ member.stars }} / 50</p>
-  <div class="star-container">
-    <div
-      *ngFor="let star of member.starList"
-      class="star"
-      [ngClass]="{
-        'star-complete': star === 2,
-        'star-half': star === 1,
-        'star-none': star === 0
-      }"
-    ></div>
+<ng-container *ngIf="vm$ | async as vm">
+  <h1>
+    <a [href]="'https://adventofcode.com/' + vm.event" target="_blank"
+      >Advent of Code</a
+    >
+    {{ vm.event }} - Cisco Leaderboard
+  </h1>
+  <div *ngFor="let member of vm | member; let i = index">
+    <p>Ranking: {{ i + 1 }}</p>
+    <p>Name: {{ member.name }}</p>
+    <p>Stars: {{ member.stars }} / 50</p>
+    <div class="star-container">
+      <div
+        *ngFor="let star of member.starList"
+        class="star"
+        [ngClass]="{
+          'star-complete': star === 2,
+          'star-half': star === 1,
+          'star-none': star === 0
+        }"
+      ></div>
+    </div>
+    <hr />
   </div>
-  <hr />
-</div>
+</ng-container>

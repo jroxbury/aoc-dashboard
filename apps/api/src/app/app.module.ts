@@ -11,7 +11,7 @@ import { join } from 'path';
   imports: [
     HttpModule,
     CacheModule.register({
-      ttl: 60 * 15, // 15 Minutes
+      ttl: 60 * 15, // Please don't make frequent automated requests to this service - avoid sending requests more often than once every 15 minutes (900 seconds)
     }),
     ConfigModule.forRoot({
       isGlobal: true,

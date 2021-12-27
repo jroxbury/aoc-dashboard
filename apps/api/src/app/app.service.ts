@@ -11,13 +11,13 @@ export class AppService {
   private readonly SESSION_COOKIE = this.configService.get<string>('COOKIE');
   constructor(
     private readonly httpService: HttpService,
-    private configService: ConfigService<EnvConfig>,
+    private readonly configService: ConfigService<EnvConfig>,
     @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
   getData(): Observable<AocResponse> {
     return from(this.cacheManager.get(this.cache_key)).pipe(
-      switchMap((isCached: AocResponse | undefined) => {
-        if (!isCached) {
+      switchMap((cache: AocResponse | undefined) => {
+        if (!cache) {
           return this.httpService
             .get(
               'https://adventofcode.com/2021/leaderboard/private/view/766287.json',
@@ -36,7 +36,7 @@ export class AppService {
               })
             );
         }
-        return of(isCached);
+        return of(cache);
       })
     );
   }

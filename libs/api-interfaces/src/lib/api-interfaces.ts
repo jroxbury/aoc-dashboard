@@ -1,13 +1,10 @@
-export interface Vm extends AocResponse {
-  starList: string[];
-}
 export interface AocResponse {
   owner_id: string;
   members: { [key: string]: Member };
   event: string;
 }
 
-interface Member {
+export interface Member {
   local_score: number;
   completion_day_level: CompletionDay;
   last_star_ts: number;
@@ -15,6 +12,7 @@ interface Member {
   stars: number;
   global_score: number;
   name: string;
+  starList: number[];
 }
 
 interface CompletionDay {
