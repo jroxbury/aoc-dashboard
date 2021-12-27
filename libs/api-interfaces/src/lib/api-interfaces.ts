@@ -28,3 +28,7 @@ interface Day {
 interface StarStamp {
   get_star_ts: number;
 }
+
+export interface EnvConfig {
+  COOKIE: string;
+}
